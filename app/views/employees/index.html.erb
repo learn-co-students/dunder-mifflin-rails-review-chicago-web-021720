@@ -1,0 +1,9 @@
+<h1>All Employees</h1>
+<% @employees.each do |e| %>
+<p><%=e.first_name %></p>
+<p><%= e.last_name %></p>
+<p><%= e.alias %></p>
+<p><%= e.title %></p>
+<p><%= e.office %></p>
+<%= link_to e.first_name, employee_path(e) %>
+<% end %>
