@@ -1,0 +1,13 @@
+<h1>New Employee</h1>
+
+<% if @errors %>
+    <% @errors.each do |error| %>
+        <p>Error: <%= error %></p>
+    <% end %>
+<% end %>
+
+<%= render 'form' %>
+
+<br>
+
+<%= link_to 'Back to Employees', employees_path %>

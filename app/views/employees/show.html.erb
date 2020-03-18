@@ -1,0 +1,26 @@
+<h1>Employee</h1>
+
+<img src="<%= @employee.img_url %>" alt="<%= @employee.name %> picture">
+
+<p>First Name: <%= @employee.first_name %></p>
+<p>Last Name: <%= @employee.last_name %></p>
+<p>Alias: <%= @employee.alias %></p>
+<p>Title: <%= @employee.title %></p>
+<p>Office: <%= @employee.office %></p>
+<% if @employee.dog %>
+    <p>Dog: <%= link_to @employee.dog.name, dog_path(@employee.dog) %></p>
+<% else %>
+    <p>Dog: None</p>
+<% end %>
+
+<%= form_tag edit_employee_path(@employee), method: :get do %>
+    <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= form_tag employee_path(@employee), method: :delete do %>
+    <%= submit_tag 'Delete' %>
+<% end %>
+
+<br>
+
+<%= link_to 'Back to Employees', employees_path %>
