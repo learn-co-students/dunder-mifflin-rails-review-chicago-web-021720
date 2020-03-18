@@ -1,0 +1,19 @@
+<h1>Dog</h1>
+
+<p>Name: <%= @dog.name %></p>
+<p>Breed: <%= @dog.breed %></p>
+<p>Age: <%= @dog.age %></p>
+<% if @dog.employees %>
+    <p>Employees:</p>
+    <ul>
+    <% @dog.employees.each do |employee| %>
+        &nbsp;<li><%= link_to employee.name, employee_path(employee) %></li>
+    <% end %>
+    </ul>
+<% else %>
+    <p>Employees: None</p>
+<% end %>
+
+<br>
+
+<%= link_to 'Back to Dogs', dogs_path %>
