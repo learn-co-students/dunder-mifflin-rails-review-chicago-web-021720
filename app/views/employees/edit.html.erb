@@ -1,0 +1,45 @@
+<h1>Update Employee</h1>
+<%= form_for @employee do |f| %>
+
+    <% if @employee.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@employee.errors.count,"error") %>
+                prohibited this employee from being saved:
+            </h2>
+            <ul>
+            <% @employee.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <%= f.label "First Name:"%>
+    <%= f.text_field "first_name"%><br>
+
+    <%= f.label "Last Name:"%>
+    <%= f.text_field "last_name"%><br>
+
+    <%= f.label "Alias:"%>
+    <%= f.text_field "alias"%><br>
+
+    <%= f.label "Office:"%>
+    <%= f.text_field "office"%><br>
+
+    <%= f.label "Title:"%>
+    <%= f.text_field "title"%><br>
+
+    <%= f.label "image link:"%>
+    <%= f.text_field "img_url"%><br>
+    <div><h3>Dog:</h3>
+    <% @dogs.each do |dog| %>
+        <%= f.label dog.name %>
+        <%= f.radio_button :dog_id, dog.id %><br>
+    <% end %>
+    </div>
+
+    <%= f.submit %>
+<% end %>
+
+<%# :first_name, :last_name, :alias, :office, :title, :dog, :img_url %>
