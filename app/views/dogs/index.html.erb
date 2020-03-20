@@ -5,12 +5,12 @@
         <p><%= link_to dog.name, dog_path(dog) %></p>
     <% end %>
 <% else %>
+<h3>Most Popular Dogs</h3>
     <ol>
         <% @popular_dogs.each do |dog| %>
                 <li><%= link_to dog.name, dog_path(dog) %></li>
         <% end %>
     </ol>
-
 <% end %>
 
 <%= link_to "Sort by Most Popular Dog", '/dogs/:id', :method=> :patch %>
