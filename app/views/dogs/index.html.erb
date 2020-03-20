@@ -1,0 +1,18 @@
+<h1> Dog Index </h1>
+
+<% if @button %>
+    <% @dogs.each do |dog| %>
+        <p><%= link_to dog.name, dog_path(dog) %></p>
+    <% end %>
+<% else %>
+    <% @popular_dogs.each do |dog| %>
+        <p><%= link_to dog.name, dog_path(dog) %></p>
+    <% end %>
+<% end %>
+
+
+
+
+
+<hr>
+<%= link_to "Employee Index", employees_path %>

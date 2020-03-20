@@ -1,0 +1,35 @@
+
+<%= image_tag @employee.img_url %>
+<h2> Name: <%= @employee.full_name %> </h2> 
+<p> Alias: <%= @employee.alias %> </p> 
+<p> Title: <%= @employee.title %> </p> 
+<p> Office: <%= @employee.office %> </p> 
+<p> Dog: <%= link_to @employee.dog.name, dog_path(@employee.dog) %></p><br>
+
+<%= link_to "Back to Employee Index", employees_path %><br><br>
+<%= link_to "Dog Index", dogs_path %>
+
+
+
+
+
+
+
+<!--
+
+ As a user, I should be able to create AND edit an Employee, 
+ and only be able to select 1 dog from a list of already existing dogs.
+ 
+ No one at Dunder Mifflin can have the same alias and/or job title 
+ (Dwight made up that rule!)
+ 
+ BONUS: Make an option to sort the dogs on the index page by the number 
+ of employees that belong to them.
+ first_name: "Dwight", last_name: "Schrute", alias: "Bear Expert", 
+ title: "Assistant to the Regional Manager", office: "Scranton", 
+ img_url: "https://typeset-beta.imgix.net/rehost/2016/10/31/d...", dog_id: 1, 
+ created_at: "2020-03-20 00:02:32", updated_at: "2020-03-20 00:02:32">]> 
+ 2.6.1 :002 > 
+ 
+ -->
+ 
