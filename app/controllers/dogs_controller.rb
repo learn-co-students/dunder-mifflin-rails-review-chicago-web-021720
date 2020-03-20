@@ -7,7 +7,11 @@ class DogsController < ApplicationController
     end 
 
     def show
-        @dog = Dog.find(params[:id])
+        if params[:id] == ":id"
+            redirect_to dogs_path
+        else 
+            @dog = Dog.find(params[:id])
+        end 
     end 
 
     def update
@@ -15,6 +19,7 @@ class DogsController < ApplicationController
         @dogs = Dog.all
         @popular_dogs = Dog.popular_dog_array
         render :index 
+
     end 
 
   
