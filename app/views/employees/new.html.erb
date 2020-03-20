@@ -1,0 +1,21 @@
+<h1> Create an Employee! </h1>
+
+<% if @errors %>
+    <% @errors.each do |e| %>
+        <p><%= e %> </p>
+    <% end %>
+<% end %>
+
+
+
+<%= form_for @employee do |f| %>
+    <p>First Name: <%= f.text_field :first_name %></p>
+    <p>Last Name: <%= f.text_field :last_name %></p>
+    <p>Alias: <%= f.text_field :alias %></p>
+    <p>Title: <%= f.text_field :title %></p>
+    <p>Office: <%= f.text_field :office %></p>
+    <p>Image Link: <%= f.text_field :img_url %></p>
+    <p>Dog: <%= f.select :dog_id, Dog.all.map { |dog| [ dog.name, dog.id ] }%></p>
+    <%= f.submit %>
+<% end %>
+

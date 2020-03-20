@@ -1,0 +1,13 @@
+<h2>NAME: <%= @dog.name %></h2>
+<p>BREED: <%= @dog.breed %></p>
+<p>AGE: <%= @dog.age %></p>
+<p>EMPLOYEES: 
+    <% @dog.employees.select do |e| %>
+    <ul>
+        <li><%= e.full_name %></li>
+    </ul>
+    <% end %></p><br>
+
+<%= link_to "Back to Dog Index", dogs_path %><br><br>
+<%= link_to "Employee Index", employees_path %>
+
